@@ -1,81 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Shape Changer</title>
     <style>
-        body{
-            background: linear-gradient(rgb(55, 34, 173),rgb(82,69,155));
-        }
-        .container{
-            width:50%;
-            height:100%;
-            padding-top:40px;
-            margin:5% auto 20%;
-            text-align: center;
-        }
-        #box{
-            height:200px;
-            width:420px;
-            border:2px double;
-            margin:20px auto;
-            background-color: #a1afee;
-        }
-        button{
-            padding:20px;
-            font-size: 15px;
-            font-family:Tahoma, sans-serif;
-            border-radius:20px;
-            border:0;
-            background:  linear-gradient(rgb(64, 250, 203),rgb(64,203,250));
-        }
-        h1{
-            text-align: center;
-            font-size: 30px;
-            color:rgb(54, 204, 166);
-        }
-        .flexbox{
-            display: flex;
-            padding:20px 100px;
-            justify-content: space-between;
-        }
+      body {
+        background: linear-gradient(rgb(55, 34, 173), rgb(82, 69, 155));
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+      }
+      .container {
+        width: 50%;
+        height: 100%;
+        padding-top: 40px;
+        margin: 5% auto 20%;
+        text-align: center;
+      }
+      .cont-box {
+        height: 200px;
+        width: 420px;
+        border: 2px double;
+        margin: 20px auto;
+        background: radial-gradient(#c9d1f8,#a1afee );
+      }
+      #box{
+          margin:25px auto;
+      }
+      button {
+        padding: 20px;
+        font-size: 15px;
+        font-family: Tahoma, sans-serif;
+        border-radius: 20px;
+        border: 0;
+        background: linear-gradient(rgb(64, 250, 203), rgb(64, 203, 250));
+      }
+      button:hover{
+          cursor: pointer;
+      }
+      .reset{
+          width:70%;
+          margin:5%;
+          background: linear-gradient(rgb(124, 154, 238),rgb(125, 240, 205));
+      }
+      h1 {
+        text-align: center;
+        font-size: 30px;
+        color: rgb(54, 204, 166);
+      }
+      .flexbox {
+        display: flex;
+        padding: 20px 100px;
+        justify-content: space-between;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <h1>Shape Changer</h1>
-        <div id="box">
-
-        </div>
-        <div class="flexbox">
-            <button onclick="rectangle()">Rectangle</button>
-            <button onclick="square()">Square</button>
-            <button onclick="circle()">Circle</button>
-        </div>
+      <h1>Shape Changer</h1>
+      <div class="cont-box">
+        <div id="box"></div>
+      </div>
+      <div class="flexbox">
+        <button onclick="rectangle()">Rectangle</button>
+        <button onclick="square()">Square</button>
+        <button onclick="circle()">Circle</button>
+      </div>
+      <button onclick = "reset()" class="reset">Reset</button>
     </div>
-</body>
-<script>
-    function circle(){
-        var shape = document.getElementById('box');
-        shape.style.backgroundColor ='rgb(42, 218, 86)';
-        shape.style.borderRadius = '50%';
-        shape.style.width = '200px';
-        shape.style.height = '200px';
+  </body>
+  <script>
+    function circle() {
+      var shape = document.getElementById("box");
+      shape.style.backgroundColor = "rgb(42, 218, 86)";
+      shape.style.borderRadius = "50%";
+      shape.style.width = "150px";
+      shape.style.height = "150px";
+      shape.style.display = "block";
     }
-    function square(){
-        var shape = document.getElementById('box');
-        shape.style.backgroundColor = 'rgb(248, 220, 10)';
-        shape.style.width = '200px';
-        shape.style.height = '200px';
-        shape.style.borderRadius = '0px';
+    function square() {
+      var shape = document.getElementById("box");
+      shape.style.backgroundColor = "rgb(248, 220, 10)";
+      shape.style.width = "150px";
+      shape.style.height = "150px";
+      shape.style.borderRadius = "0px";
+      shape.style.display = "block";
     }
-    function rectangle(){
-        var shape = document.getElementById('box');
-        shape.style.backgroundColor='rgb(238, 77, 77)';
-        shape.style.width = '400px';
-        shape.style.height = '200px';
-        shape.style.borderRadius = '0px';
+    function rectangle() {
+      var shape = document.getElementById("box");
+      shape.style.backgroundColor = "rgb(238, 77, 77)";
+      shape.style.width = "300px";
+      shape.style.height = "150px";
+      shape.style.borderRadius = "0px";
+      shape.style.display = "block";
     }
-</script>
+    function reset() {
+        var shape = document.getElementById("box");
+        shape.style.display = "none";
+    }
+  </script>
 </html>
